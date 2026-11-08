@@ -1,0 +1,716 @@
+@import url('https://fonts.googleapis.com/css2?family=Trykker&display=swap');
+
+html {
+    font-family: 'Trykker', monospace, serif;
+}
+
+body {
+    margin: 0 4px;
+    padding: 0;
+    min-height: 100svh;
+    width: calc(100svw - 8px);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    align-items: center;
+    background-color: #051471ce;
+    position: relative;
+}
+
+header {
+    width: 100%;
+    height: 10svh;
+    gap: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+input {
+    width: 30svw;
+    height: 7svh;
+    border-radius: 0.8rem;
+    font-size: 1.45rem;
+    font-weight: 700;
+    text-align: center;
+    border: none;
+    
+}
+
+span {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #3b3a3ad7;
+    margin-left: 1rem;
+}
+
+main {
+    margin: 0;
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+main img {
+    width: 100%;
+    height: 90svh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    outline: 4px inset #0e4669d7;
+}
+
+@media (orientation: landscape) {
+    main {
+        width: auto;
+        height: 100%;
+    }
+}
+
+
+.floor-option {
+    position: absolute;
+    height: 72px;
+    width: 216px;
+    background-color: #4242423a;
+    top: 85%;
+    right: 5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.floor {
+    width: 72px;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: 64px;
+    color: rgb(239, 237, 237);
+}
+
+.floor-button {
+    height: 100%;
+    width: 72px;
+    background: transparent;
+    border: none;
+    font-size: 64px;
+    font-weight: 700;
+    color: rgba(245, 245, 245, 0.242);
+}
+
+.floor-button:hover {
+    background-color: #a3a4a4a0;
+}
+
+
+
+.mark {
+    display: flex;
+    height: 0.65rem;
+    width: 1.3rem;
+    font-size: 0.4rem;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: #5fe307;
+    position: absolute;
+    z-index: 2;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    z-index: 2;
+    user-select: none;
+}
+
+.active {
+    opacity: 1;
+}
+
+.kram {
+    display: flex;
+    flex-direction: row;
+    height: 0.75rem;
+    width: 0.75rem;
+    border: none;
+    border-radius: 50%;
+    font-size: 0.5rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #de1717;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    user-select: none;
+}
+/*
+.kram[hidden] {
+    display: none;
+    opacity: 0;
+}
+
+.mark[hidden] {
+    display: none;
+    opacity: 0;
+}
+
+@starting-style {
+    .mark:not([hidden]) {
+        opacity: 0;
+    }
+    .kram:not([hidden]) {
+        opacity: 0;
+    }
+}
+*/
+
+/* Trepikojad */
+#mark500 {top: 9.5%;left: 25%;}
+#mark501 {top: 10.25%; left: 72.5%}
+
+
+/* Esimese korruse ruumid */
+#mark1004 {top: 7.4%;left: 34.5%;}
+#mark1005 {top: 6.25%;left: 39%;}
+#mark1006 {top: 6.25%;left: 47%;}
+#mark1007 {top: 6.25%;left: 55%;}
+#mark1008 {top: 6.25%;left: 62.5%;}
+#mark1013 {top: 14%;left: 77.25%;}
+#mark1015 {top: 18%;left: 77.25%;}
+#mark1017 {top: 23.5%;left: 71.5%;}
+#mark1018 {top: 23.5%;left: 59%;}
+#mark1019 {top: 23.5%;left: 50%;}
+#mark1020 {top: 23.5%;left: 42%;}
+#mark1021 {top: 23.5%;left: 29.5%;}
+#mark1022 {top: 23%;left: 26.75%;}
+#mark1024 {top: 34.75%;left: 20.25%;}
+#mark1025 {top: 41%;left: 18.5%;}
+#mark1026 {top: 43%;left: 17.75%;}
+#mark1030 {top: 57%;left: 14.25%;}
+#mark1035 {top: 39.5%;left: 12%;}
+#mark1037 {top: 23%;left: 9.25%;}
+#mark1039 {top: 7.5%;left: 7%;}
+#mark1040 {top: 5%;left: 10.5%;}
+
+/* Esimese korruse checkpointid */
+#mark100 {top: 9.5%;left: 19.55%;}
+#mark101 {top: 16%;left: 19.55%}
+#mark102 {top: 6%;left: 28%}
+#mark103 {top: 26%;left: 19.55%}
+#mark104 {top: 4.5%;left: 33%}
+#mark105 {top: 26%;left: 9.25%}
+#mark106 {top: 29%;left: 16.5%}
+#mark107 {top: 34%;left: 17.5%}
+#mark108 {top: 26%;left: 26%}
+#mark109 {top: 3%;left: 39%}
+#mark110 {top: 40.25%;left: 15.5%}
+#mark111 {top: 26.25%;left: 29.375%}
+#mark112 {top: 3%;left: 46.75%}
+#mark113 {top: 42%;left: 15%}
+#mark114 {top: 26.5%;left: 41.5%}
+#mark115 {top: 3%;left: 54.5%}
+#mark116 {top: 56%;left: 11.5%}
+#mark117 {top: 26.5%;left: 49.75%}
+#mark118 {top: 3%;left: 62%}
+#mark119 {top: 65%;left: 8%}
+#mark120 {top: 26.5%;left: 58.75%}
+#mark121 {top: 3.5%;left: 74.25%}
+#mark122 {top: 26.5%;left: 71.5%}
+#mark123 {top: 14.5%;left: 74.25%}
+#mark124 {top: 26.25%;left: 73.75%}
+#mark125 {top: 18.25%;left: 74%}
+#mark126 {top: 7.5%;left: 10.5%}
+#mark127 {top: 10.25%;left: 74.25%}
+
+/* Teise korruse ruumid */
+#mark2002 {top: 7%;left: 18.5%;}
+#mark2003 {top: 11%;left: 32.5%;}
+#mark2004 {top: 11%;left: 34.5%;}
+#mark2005 {top: 11%;left: 48%;}
+#mark2006 {top: 11%;left: 50.5%;}
+#mark2007 {top: 11%;left: 62%;}
+#mark2010 {top: 7.25%;left: 70%;}
+#mark2011 {top: 5.5%;left: 71.75%;}
+#mark2012 {top: 3.5%;left: 71.75%;}
+#mark2016 {top: 10.5%;left: 79.25%;}
+#mark2017 {top: 10.5%;left: 82.25%;}
+#mark2018 {top: 16.5%;left: 80%;}
+#mark2019 {top: 18.25%;left: 76.25%;}
+#mark2020 {top: 20.25%;left: 74.25%;}
+#mark2021 {top: 18.5%;left: 67.5%;}
+#mark2022 {top: 18.5%;left: 57.5%;}
+#mark2023 {top: 17%;left: 52.5%;}
+#mark2024 {top: 17.75%;left: 42.25%;}
+#mark2025 {top: 19.5%;left: 38.25%;}
+#mark2026 {top: 18.5%;left: 32%;}
+#mark2027 {top: 18.25%;left: 24.75%;}
+#mark2028 {top: 27.25%;left: 22.5%;}
+#mark2029 {top: 29.5%;left: 22%;}
+#mark2030 {top: 39%;left: 19.5%;}
+#mark2034 {top: 50.25%;left: 16.5%;}
+#mark2035 {top: 59.25%;left: 14%;}
+#mark2036 {top: 64.5%;left: 14%;}
+#mark2038 {top: 70%;left: 14.5%;}
+#mark2039 {top: 71.5%;left: 10.5%;}
+#mark2040 {top: 82%;left: 7.5%;}
+#mark2041 {top: 84%;left: 7.5%;}
+#mark2042 {top: 86.25%;left: 4.25%;}
+#mark2045 {top: 32.25%;left: 9.25%;}
+#mark2046 {top: 24.25%;left: 9.25%;}
+#mark2047 {top: 18%;left: 9.25%;}
+#mark2048 {top: 19%;left: 19%;}
+#mark2049 {top: 11%;left: 7.75%;}
+#mark2051 {top: 7%;left: 13%;}
+
+/* Teise korruse checkpointid */
+#mark200 {top: 10.5%;left: 20.5%;}
+#mark201 {top: 14.5%;left: 20.5%;}
+#mark202 {top: 14.5%;left: 14.5%;}
+#mark203 {top: 17.5%;left: 21.75%;}
+#mark204 {top: 14.5%;left: 24.75%;}
+#mark205 {top: 7.5%;left: 15%;}
+#mark206 {top: 14.5%;left: 8%;}
+#mark207 {top: 17.5%;left: 11.5%;}
+#mark208 {top: 26.5%;left: 19.75%;}
+#mark209 {top: 14.5%;left: 32.25%;}
+#mark210 {top: 24%;left: 11.75%;}
+#mark211 {top: 29%;left: 19%;}
+#mark212 {top: 14.5%;left: 38.5%;}
+#mark213 {top: 32%;left: 11.75%;}
+#mark214 {top: 38%;left: 16.75%;}
+#mark215 {top: 14.5%;left: 48%;}
+#mark216 {top: 37.75%;left: 12%;}
+#mark217 {top: 45%;left: 15%;}
+#mark218 {top: 14.5%;left: 50.5%;}
+#mark219 {top: 49.5%;left: 13.75%;}
+#mark220 {top: 15%;left: 55.5%;}
+#mark221 {top: 58.5%;left: 11.5%;}
+#mark222 {top: 15%;left: 61.5%;}
+#mark223 {top: 63%;left: 10.5%;}
+#mark224 {top: 15%;left: 71%;}
+#mark225 {top: 70.5%;left: 7.75%;}
+#mark226 {top: 18.5%;left: 71.25%;}
+#mark227 {top: 14.5%;left: 74.5%;}
+#mark228 {top: 81.5%;left: 5.25%;}
+#mark229 {top: 13.75%;left: 79.5%;}
+#mark230 {top: 7.5%;left: 74.5%;}
+#mark231 {top: 84.5%;left: 4.5%;}
+#mark232 {top: 13.75%;left: 82%;}
+#mark233 {top: 5.75%;left: 74.5%;}
+#mark234 {top: 4%;left: 74.5%;}
+#mark235 {top: 10.25%;left: 74.5%;}
+
+/* Kolmanda korruse ruumid */
+#mark3002 {top: 4%;left: 24%;}
+#mark3003 {top: 8%;left: 31.5%;}
+#mark3004 {top: 4%;left: 31.5%;}
+#mark3005 {top: 4%;left: 33%;}
+#mark3006 {top: 8%;left: 33%;}
+#mark3007 {top: 3.5%;left: 35%;}
+#mark3008 {top: 8%;left: 39.25%;}
+#mark3009 {top: 4.25%;left: 39.75%;}
+#mark3010 {top: 8%;left: 41%;}
+#mark3011 {top: 4%;left: 43%;}
+#mark3012 {top: 8.75%;left: 46.5%;}
+#mark3013 {top: 4%;left: 45%;}
+#mark3014 {top: 8.5%;left: 48.75%;}
+#mark3015 {top: 4.25%;left: 50%;}
+#mark3016 {top: 8%;left: 53.25%;}
+#mark3017 {top: 3.75%;left: 54%;}
+#mark3018 {top: 8.5%;left: 56.75%;}
+#mark3019 {top: 3.75%;left: 56.75%;}
+#mark3020 {top: 8.5%;left: 58.5%;}
+#mark3021 {top: 4%;left: 58.5%;}
+#mark3022 {top: 8.25%;left: 62.25%;}
+#mark3023 {top: 4.25%;left: 61.5%;}
+#mark3024 {top: 8%;left: 65.5%;}
+#mark3025 {top: 3.75%;left: 66%;}
+#mark3026 {top: 8%;left: 69%;}
+#mark3027 {top: 3.875%;left: 68%;}
+#mark3028 {top: 4.25%;left: 73.5%;}
+#mark3029 {top: 4.25%;left: 75.5%;}
+#mark3032 {top: 4.25%;left: 85.5%;}
+#mark3033 {top: 4.25%;left: 89.5%;}
+#mark3034 {top: 4.25%;left: 91.5%;}
+#mark3037 {top: 8%;left: 89%;}
+#mark3038 {top: 10%;left: 86%;}
+#mark3039 {top: 11.75%;left: 84.75%;}
+#mark3040 {top: 13.75%;left: 83%;}
+#mark3041 {top: 17%;left: 80.5%;}
+#mark3042 {top: 18.75%;left: 79%;}
+#mark3043 {top: 21%;left: 77%;}
+#mark3044 {top: 18%;left: 69.75%;}
+#mark3045 {top: 18%;left: 67%;}
+#mark3046 {top: 18%;left: 65.25%;}
+#mark3047 {top: 21.5%;left: 66.5%;}
+#mark3048 {top: 18%;left: 60.75%;}
+#mark3049 {top: 21.75%;left: 62%;}
+#mark3050 {top: 18%;left: 57.25%;}
+#mark3051 {top: 22%;left: 60%;}
+#mark3052 {top: 21.5%;left: 56%;}
+#mark3053 {top: 17.5%;left: 54.5%;}
+#mark3054 {top: 21.5%;left: 54.5%;}
+#mark3055 {top: 17.5%;left: 52%;}
+#mark3056 {top: 22%;left: 49.5%;}
+#mark3057 {top: 18%;left: 50%;}
+#mark3058 {top: 18%;left: 46.25%;}
+#mark3059 {top: 22%;left: 45%;}
+#mark3060 {top: 18%;left: 44.5%;}
+#mark3061 {top: 21.75%;left: 43%;}
+#mark3062 {top: 17.5%;left: 40%;}
+#mark3063 {top: 21.75%;left: 40.75%;}
+#mark3064 {top: 17.5%;left: 37%;}
+#mark3065 {top: 21.75%;left: 35.5%;}
+#mark3066 {top: 17.75%;left: 35%;}
+#mark3067 {top: 21.75%;left: 33.5%;}
+#mark3068 {top: 18%;left: 32%;}
+#mark3070 {top: 28%;left: 25.5%;}
+#mark3071 {top: 28.25%;left: 22%;}
+#mark3072 {top: 29.5%;left: 25%;}
+#mark3073 {top: 30%;left: 21%;}
+#mark3074 {top: 32%;left: 20.25%;}
+#mark3075 {top: 34.25%;left: 24.75%;}
+#mark3076 {top: 36%;left: 24%;}
+#mark3077 {top: 37.5%;left: 19.5%;}
+#mark3078 {top: 40.25%;left: 22.25%;}
+#mark3079 {top: 41%;left: 18.75%;}
+#mark3080 {top: 42%;left: 22%;}
+#mark3081 {top: 44%;left: 17.5%;}
+#mark3082 {top: 45%;left: 21%;}
+#mark3085 {top: 47.75%;left: 16.5%;}
+#mark3086 {top: 50.5%;left: 19.5%;}
+#mark3087 {top: 52.25%;left: 12.75%;}
+#mark3088 {top: 54%;left: 19%;}
+#mark3089 {top: 57.25%;left: 18%;}
+#mark3090 {top: 59%;left: 17%;}
+#mark3091 {top: 55%;left: 10%;}
+#mark3092 {top: 67.75%;left: 10.25%;}
+#mark3095 {top: 90.75%;left: 5.5%;}
+#mark3096 {top: 52.5%; left: 6.5%;}
+#mark3097 {top: 49.5%;left: 5.75%;}
+#mark3099 {top: 47.75%;left: 5.75%;}
+#mark3100 {top: 45.25%;left: 6.25%;}
+#mark3101 {top: 43.75%;left: 9.75%;}
+#mark3102 {top: 42.5%;left: 6%;}
+#mark3103 {top: 41.75%;left: 10%;}
+#mark3104 {top: 40.25%;left: 6%;}
+#mark3105 {top: 38%;left: 10%;}
+#mark3106 {top: 36.75%;left: 6%;}
+#mark3107 {top: 36.25%;left: 10%;}
+#mark3108 {top: 33.25%;left: 6%;}
+#mark3109 {top: 30.5%;left: 10.5%;}
+#mark3110 {top: 31.25%;left: 6%;}
+#mark3111 {top: 28.75%;left: 6%;}
+#mark3112 {top: 28.5%;left: 10%;}
+#mark3113 {top: 26.5%;left: 6.25%;}
+#mark3114 {top: 21.5%;left: 6.25%;}
+#mark3115 {top: 21.5%;left: 12.5%;}
+#mark3116 {top: 21.5%;left: 15.75%;}
+#mark3117 {top: 21.5%;left: 18.75%;}
+#mark3118 {top: 21.5%;left: 21.5%;}
+#mark3119 {top: 8.25%;left: 6%;}
+#mark3120 {top: 4.75%;left: 6.5%;}
+#mark3121 {top: 4.75%;left: 9.25%;}
+#mark3122 {top: 4.75%;left: 11.75%;}
+#mark3123 {top: 8.25%;left: 12%;}
+#mark3124 {top: 8.25%;left: 14.25%;}
+
+/* Kolmanda korruse checkpointid */
+#mark300 {top: 9.5%; left: 21.5%}
+#mark301 {top: 6.25%; left: 21.5%}
+#mark302 {top: 15%; left: 21.5%}
+#mark303 {top: 6.25%; left: 14.25%}
+#mark304 {top: 4%; left: 21.5%}
+#mark305 {top: 6.25%; left: 27%}
+#mark306 {top: 19.25%; left: 21.5%}
+#mark307 {top: 6.25%; left: 12.25%}
+#mark308 {top: 6%; left: 31.25%}
+#mark309 {top: 19.25%; left: 18.75%}
+#mark310 {top: 19.75%; left: 25.75%}
+#mark311 {top: 6.375%; left: 8.375%}
+#mark312 {top: 6%; left: 33%}
+#mark313 {top: 19.25%; left: 16%}
+#mark314 {top: 27.75%; left: 23.75%}
+#mark315 {top: 19.875%; left: 32%}
+#mark316 {top: 6.375%; left: 6.5%}
+#mark317 {top: 8.25%; left: 8.25%}
+#mark318 {top: 6%; left: 35.25%}
+#mark319 {top: 19.25%; left: 12.75%}
+#mark320 {top: 30%; left: 23%}
+#mark321 {top: 19.75%; left: 33.5%}
+#mark322 {top: 15.5%; left: 8.25%}
+#mark323 {top: 6.125%; left: 39.5%}
+#mark324 {top: 19.75%; left: 8.125%}
+#mark325 {top: 32.5%; left: 22.5%}
+#mark326 {top: 19.625%; left: 35.25%}
+#mark327 {top: 6.125%; left: 41%}
+#mark328 {top: 21.5%; left: 8.125%}
+#mark329 {top: 35%; left: 22%}
+#mark330 {top: 19.625%; left: 36.75%}
+#mark331 {top: 6%; left: 43.125%}
+#mark332 {top: 26.375%; left: 8.125%}
+#mark333 {top: 37.5%; left: 21.25%}
+#mark334 {top: 19.625%; left: 39.5%}
+#mark335 {top: 6%; left: 44.75%}
+#mark336 {top: 28.5%; left: 8.125%}
+#mark337 {top: 39.675%; left: 20.5%}
+#mark338 {top: 19.625%; left: 40.75%}
+#mark339 {top: 6.25%; left: 46.75%}
+#mark340 {top: 30.625%; left: 8.125%}
+#mark341 {top: 41.5%; left: 20%}
+#mark342 {top: 19.625%; left: 43%}
+#mark343 {top: 6.25%; left: 49.875%}
+#mark344 {top: 33%; left: 8.125%}
+#mark345 {top: 44.25%; left: 19.25%}
+#mark346 {top: 19.875%; left: 44.75%}
+#mark347 {top: 6%; left: 53.875%}
+#mark348 {top: 36.5%; left: 7.875%}
+#mark349 {top: 48.25%; left: 18.25%}
+#mark350 {top: 20%; left: 46%}
+#mark351 {top: 6.125%; left: 56.75%}
+#mark352 {top: 37.75%; left: 7.875%}
+#mark353 {top: 49.75%; left: 17.875%}
+#mark354 {top: 20.125%; left: 49.25%}
+#mark355 {top: 6.125%; left: 58.25%}
+#mark356 {top: 40%; left: 7.875%}
+#mark357 {top: 52.75%; left: 17.25%}
+#mark358 {top: 19.75%; left: 52%}
+#mark359 {top: 6.125%; left: 61.5%}
+#mark360 {top: 42.125%; left: 8%}
+#mark361 {top: 56.5%; left: 16.25%}
+#mark362 {top: 19.75%; left: 54%}
+#mark363 {top: 6%; left: 65.75%}
+#mark364 {top: 43.5%; left: 8%}
+#mark365 {top: 58.375%; left: 15.5%}
+#mark366 {top: 19.75%; left: 55.625%}
+#mark367 {top: 6%; left: 68.25%}
+#mark368 {top: 45.125%; left: 8%}
+#mark369 {top: 60.25%; left: 14.75%}
+#mark370 {top: 19.875%; left: 57.125%}
+#mark371 {top: 6.25%; left: 73.75%}
+#mark372 {top: 47.75%; left: 8%}
+#mark373 {top: 67.75%; left: 10%}
+#mark374 {top: 20%; left: 60.25%}
+#mark375 {top: 6.25%; left: 75.75%}
+#mark376 {top: 49.5%; left: 8%}
+#mark377 {top: 58.125%; left: 8.125%}
+#mark378 {top: 20%; left: 61.75%}
+#mark379 {top: 6.25%; left: 85.5%}
+#mark380 {top: 52.375%; left: 8.125%}
+#mark381 {top: 85.5%; left: 5.5%}
+#mark382 {top: 19.875%; left: 65%}
+#mark383 {top: 6.125%; left: 88.75%}
+#mark384 {top: 54.875%; left: 8.125%}
+#mark385 {top: 19.875%; left: 67%}
+#mark386 {top: 6.125%; left: 91.125%}
+#mark387 {top: 8.5%; left: 85%}
+#mark388 {top: 19.875%; left: 69.5%}
+#mark389 {top: 11%; left: 83.25%}
+#mark390 {top: 20%; left: 75.5%}
+#mark391 {top: 12.5%; left: 81.675%}
+#mark392 {top: 17.25%; left: 77.75%}
+#mark393 {top: 15.75%; left: 79%}
+#mark394 {top: 10%; left: 76%}
+#mark395 {top: 12.75%; left: 76.125%}
+
+/* Neljanda korruse ruumid */
+#mark4002 {top: 4.75%;left: 23.5%;}
+#mark4003 {top: 5.25%;left: 29%;}
+#mark4004 {top: 5.25%;left: 31.5%;}
+#mark4005 {top: 8.5%;left: 33%;}
+#mark4006 {top: 5.25%;left: 35.75%;}
+#mark4007 {top: 5%;left: 38%;}
+#mark4008 {top: 8.5%;left: 39%;}
+#mark4009 {top: 5.25%;left: 42.75%;}
+#mark4010 {top: 8.75%;left: 44%;}
+#mark4011 {top: 5.25%;left: 45.75%;}
+#mark4012 {top: 5.25%;left: 47.75%;}
+#mark4013 {top: 9.25%;left: 54.5%;}
+#mark4014 {top: 4.75%;left: 51.75%;}
+#mark4015 {top: 4.75%;left: 53.75%;}
+#mark4016 {top: 5.25%;left: 55.75%;}
+#mark4017 {top: 9.25%;left: 59.5%;}
+#mark4018 {top: 5.5%;left: 58%;}
+#mark4019 {top: 5%;left: 62.5%;}
+#mark4020 {top: 8.75%;left: 64.75%;}
+#mark4021 {top: 5.25%;left: 65%;}
+#mark4022 {top: 8.75%;left: 68.25%;}
+#mark4023 {top: 5.5%;left: 67%;}
+#mark4024 {top: 5.5%;left: 70.5%;}
+#mark4025 {top: 5.5%;left: 72.5%;}
+#mark4026 {top: 5.5%;left: 75.5%;}
+#mark4029 {top: 5.5%;left: 84.75%;}
+#mark4030 {top: 5.5%;left: 86.75%;}
+#mark4031 {top: 5.5%;left: 89%;}
+#mark4032 {top: 7%;left: 91.75%;}
+#mark4035 {top: 8.75%;left: 88%;}
+#mark4036 {top: 11%;left: 85.75%;}
+#mark4037 {top: 12.75%;left: 84%;}
+#mark4038 {top: 14.5%;left: 82.75%;}
+#mark4039 {top: 16.25%;left: 81.25%;}
+#mark4040 {top: 17.75%;left: 80%;}
+#mark4041 {top: 19.75%;left: 78.25%;}
+#mark4042 {top: 21.5%;left: 76.75%;}
+#mark4043 {top: 23%;left: 75.5%;}
+#mark4044 {top: 19%;left: 69%;}
+#mark4045 {top: 22.5%;left: 66.25%;}
+#mark4046 {top: 19.25%;left: 64.5%;}
+#mark4047 {top: 22.75%;left: 61.5%;}
+#mark4048 {top: 19.25%;left: 60%;}
+#mark4049 {top: 22.75%;left: 59.5%;}
+#mark4050 {top: 19.25%;left: 58.5%;}
+#mark4051 {top: 22.5%;left: 55.25%;}
+#mark4052 {top: 18.5%;left: 52.75%;}
+#mark4053 {top: 22.5%;left: 53.75%;}
+#mark4054 {top: 23.25%;left: 47.75%;}
+#mark4055 {top: 23%;left: 46%;}
+#mark4056 {top: 19%;left: 44%;}
+#mark4057 {top: 22.5%;left: 41.25%;}
+#mark4058 {top: 19%;left: 37.5%;}
+#mark4059 {top: 22.75%;left: 37.75%;}
+#mark4060 {top: 22.75%;left: 36.25%;}
+#mark4061 {top: 19%;left: 33.5%;}
+#mark4062 {top: 22.75%;left: 32.75%;}
+#mark4063 {top: 22.75%;left: 31%;}
+#mark4064 {top: 19%;left: 31.75%;}
+#mark4066 {top: 27.5%;left: 21.75%;}
+#mark4067 {top: 28.25%;left: 25.5%;}
+#mark4068 {top: 29.5%;left: 21.25%;}
+#mark4069 {top: 30.25%;left: 24.75%;}
+#mark4070 {top: 33.5%;left: 24%;}
+#mark4071 {top: 34.5%;left: 19.5%;}
+#mark4072 {top: 36.75%;left: 23.75%;}
+#mark4073 {top: 36%;left: 19.25%;}
+#mark4074 {top: 38.5%;left: 23.25%;}
+#mark4075 {top: 40.75%;left: 22.75%;}
+#mark4076 {top: 40%;left: 18.5%;}
+#mark4077 {top: 42.75%;left: 22%;}
+#mark4078 {top: 42%;left: 18%;}
+#mark4079 {top: 44.75%;left: 21%;}
+#mark4080 {top: 46.25%;left: 20.5%;}
+#mark4083 {top: 46.25%;left: 16.5%;}
+#mark4084 {top: 52%;left: 13.25%;}
+#mark4085 {top: 44.75%;left: 5.75%;}
+#mark4086 {top: 43%;left: 6%;}
+#mark4087 {top: 40.75%;left: 5.75%;}
+#mark4088 {top: 40.75%;left: 10%;}
+#mark4089 {top: 38.75%;left: 5.5%;}
+#mark4090 {top: 38.75%;left: 10%;}
+#mark4091 {top: 36.75%;left: 5.5%;}
+#mark4092 {top: 36%;left: 10%;}
+#mark4093 {top: 35%;left: 5.5%;}
+#mark4094 {top: 32.75%;left: 5.5%;}
+#mark4095 {top: 32.5%;left: 10.25%;}
+#mark4096 {top: 30.875%;left: 5.5%;}
+#mark4097 {top: 30.75%;left: 10%;}
+#mark4098 {top: 29%; left: 5.75%;}
+#mark4099 {top: 27%;left: 10%;}
+#mark4100 {top: 27%;left: 5.75%;}
+#mark4101 {top: 24.5%;left: 5.75%;}
+#mark4102 {top: 22.25%;left: 5.75%;}
+#mark4103 {top: 22.25%;left: 11.75%;}
+#mark4104 {top: 22.25%;left: 16%;}
+#mark4105 {top: 11%;left: 5.75%;}
+#mark4106 {top: 9%;left: 5.75%;}
+#mark4107 {top: 5.25%;left: 6%;}
+#mark4108 {top: 5.25%;left: 8.5%;}
+#mark4109 {top: 8.75%;left: 10%;}
+#mark4110 {top: 5.25%;left: 10%;}
+
+/* Neljanda korruse checkpointid */
+#mark400 {top: 9.5%; left: 21.5%}
+#mark401 {top: 6.875%; left: 21.5%}
+#mark402 {top: 15.75%; left: 21.5%}
+#mark403 {top: 6.875%; left: 9.75%}
+#mark404 {top: 4.75%; left: 21.5%}
+#mark405 {top: 6.875%; left: 27%}
+#mark406 {top: 20.25%; left: 7.75%}
+#mark407 {top: 20.25%; left: 12%}
+#mark408 {top: 20.25%; left: 16%}
+#mark409 {top: 20.5%; left: 25.5%}
+#mark410 {top: 6.875%; left: 7.875%}
+#mark411 {top: 6.875%; left: 29.5%}
+#mark412 {top: 22.5%; left: 7.75%}
+#mark413 {top: 28%; left: 23.5%}
+#mark414 {top: 20.75%; left: 31.5%}
+#mark415 {top: 6.875%; left: 6.125%}
+#mark416 {top: 8.875%; left: 7.875%}
+#mark417 {top: 6.875%; left: 31.5%}
+#mark418 {top: 24.75%; left: 7.75%}
+#mark419 {top: 30%; left: 23%}
+#mark420 {top: 20.75%; left: 33.5%}
+#mark421 {top: 16%; left: 7.875%}
+#mark422 {top: 6.875%; left: 33.25%}
+#mark423 {top: 26.875%; left: 7.75%}
+#mark424 {top: 32.5%; left: 22.5%}
+#mark425 {top: 20.75%; left: 36%}
+#mark426 {top: 6.875%; left: 34.875%}
+#mark427 {top: 28.75%; left: 7.875%}
+#mark428 {top: 35%; left: 21.625%}
+#mark429 {top: 20.75%; left: 37.75%}
+#mark430 {top: 6.875%; left: 36%}
+#mark431 {top: 30.75%; left: 7.875%}
+#mark432 {top: 36.75%; left: 21.25%}
+#mark433 {top: 20.75%; left: 40.875%}
+#mark434 {top: 6.875%; left: 38.5%}
+#mark435 {top: 32.5%; left: 7.875%}
+#mark436 {top: 38%; left: 21%}
+#mark437 {top: 20.75%; left: 43.75%}
+#mark438 {top: 6.875%; left: 42.5%}
+#mark439 {top: 34.875%; left: 7.875%}
+#mark440 {top: 40%; left: 20.625%}
+#mark441 {top: 21%; left: 46.25%}
+#mark442 {top: 6.875%; left: 43.75%}
+#mark443 {top: 36.25%; left:7.75%}
+#mark444 {top: 42%; left: 20%}
+#mark445 {top: 21%; left: 48%}
+#mark446 {top: 6.875%; left: 46%}
+#mark447 {top: 38.75%; left: 7.875%}
+#mark448 {top: 44.25%; left: 19.25%}
+#mark449 {top: 20.375%; left: 52.5%}
+#mark450 {top: 6.875%; left: 48%}
+#mark451 {top: 40.75%; left: 7.875%}
+#mark452 {top: 46%; left: 18.75%}
+#mark453 {top: 20.375%; left: 54%}
+#mark454 {top: 6.875%; left: 51.625%}
+#mark455 {top: 43%; left: 7.875%}
+#mark456 {top: 53.5%; left: 17%}
+#mark457 {top: 20.5%; left: 55.75%}
+#mark458 {top: 6.875%; left: 53.5%}
+#mark459 {top: 44.75%; left: 8%}
+#mark460 {top: 54%; left: 13%}
+#mark461 {top: 21%; left: 58%}
+#mark462 {top: 6.875%; left: 54.5%}
+#mark463 {top: 53.5%; left: 8.125%}
+#mark464 {top: 21%; left: 59.75%}
+#mark465 {top: 6.875%; left: 55.75%}
+#mark466 {top: 20.75%; left: 61%}
+#mark467 {top: 7%; left: 58%}
+#mark468 {top: 20.75%; left: 64.75%}
+#mark469 {top: 7%; left: 59.75%}
+#mark470 {top: 20.75%; left: 66.25%}
+#mark471 {top: 6.75%; left: 62.875%}
+#mark472 {top: 20.75%; left: 69%}
+#mark473 {top: 6.75%; left: 64.75%}
+#mark474 {top: 20.75%; left: 73%}
+#mark475 {top: 6.75%; left: 67%}
+#mark476 {top: 22%; left: 74%}
+#mark477 {top: 6.875%; left: 71%}
+#mark478 {top: 20.25%; left: 75.5%}
+#mark479 {top: 6.875%; left: 72.75%}
+#mark480 {top: 18.75%; left: 76.75%}
+#mark481 {top: 6.875%; left: 75.25%}
+#mark482 {top: 16.75%; left: 78.25%}
+#mark483 {top: 10.25%; left: 75.25%}
+#mark484 {top: 6.875%; left: 84.5%}
+#mark485 {top: 15%; left: 79.5%}
+#mark486 {top: 14%; left: 75.5%}
+#mark487 {top: 6.875%; left: 87%}
+#mark488 {top: 13.5%; left: 81%}
+#mark489 {top: 6.875%; left: 89.125%}
+#mark490 {top: 12%; left: 82.25%}
+#mark491 {top: 9.75%; left: 84%}
