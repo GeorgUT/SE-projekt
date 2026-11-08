@@ -1,0 +1,97 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #d5f7ba;
+}
+.header{
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url(Pildid/banner.jpg); 
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    
+}
+.text-box{
+    width: 50%;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+.text-box h1{
+    font-size: 50px;
+}
+.text-box p{
+    margin: 10px 0 20px;
+    font-size: 16px;
+}
+.viib_maini{
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    border: 1px solid white;
+    padding: 12px 34px;
+    font-size: 13px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+    border-radius: 30px;
+}
+.viib_maini:hover{
+    background: #31e057;
+    transition: 1s;
+}
+
+
+
+
+
+.info{
+    width: 80%;
+    margin: auto;
+    text-align: left;
+    padding-top: 100px;
+}
+.info h1{
+    font-size: 36px;
+    font-weight: 600;
+}
+.info p{
+    color: black;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 22px;
+    padding: 10px;
+}
+.kirjeldus{
+    margin-bottom: 30px;
+}
+.viib_info{
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    border: 1px solid black;
+    padding: 12px 34px;
+    font-size: 13px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+    border-radius: 30px;
+}
+.viib_info:hover{
+    background: #31e057;
+    transition: 1s;
+}
+.info {
+    border: 3px solid #ccc;
+    border-radius: 15px;
+    padding: 25px;
+    background-color: #ffffff;
+    max-width: 1000px;
+    margin: 20px auto;
+}
