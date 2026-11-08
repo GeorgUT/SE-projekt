@@ -26,6 +26,31 @@ header {
     justify-content: center;
 }
 
+.map-guide-link {
+    position: absolute;
+    right: 16px;
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0 8px;
+    color: white;
+    font-size: 0.9rem;
+    text-underline-offset: 4px;
+}
+
+.map-guide-link:focus-visible {
+    outline: 3px solid cyan;
+    outline-offset: 4px;
+}
+
+@media (max-width: 600px) {
+    .map-guide-link {
+        right: 8px;
+        max-width: 22%;
+        font-size: 0.75rem;
+    }
+}
+
 input {
     width: 50svw;
     height: 7svh;
