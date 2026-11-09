@@ -1868,7 +1868,8 @@ function calculate() {
         inputTimeout = setTimeout(() => {
 
             // Kontrollime sisendit
-            start = numberInput2.value;
+            start = numberInput2.value.trim();
+            start = start === "" ? 100 : Number(start);
             wish = numberInput1.value;
 
             resetActive();
@@ -1876,21 +1877,6 @@ function calculate() {
 
             // Kui sisend on number
             if (wish == Number(wish) && Number(wish) > 1000) {
-                if (start == Number(start) && Number(start) > 1000) {
-                    currentFloor = Number(wish) - (Number(wish) % 1000);
-                    currentFloor = currentFloor === 0 ? 1 : currentFloor / 1000;
-                    pathToShow = findPath(Number(start), Number(wish));
-                    updateFloor();
-                    updatePoints();
-                }
-                else if (start == "") {
-                    start = 100;
-                    currentFloor = Number(wish) - (Number(wish) % 1000);
-                    currentFloor = currentFloor === 0 ? 1 : currentFloor / 1000;
-                    pathToShow = findPath(Number(start), Number(wish));
-                    updateFloor();
-                    updatePoints();
-                }
                 currentFloor = Number(wish) - (Number(wish) % 1000);
                 currentFloor = currentFloor === 0 ? 1 : currentFloor / 1000;
                 pathToShow = findPath(start, Number(wish));
@@ -1908,6 +1894,11 @@ function calculate() {
                     for (const [key, destinations] of Object.entries(shortcut)) {
                         if (key == wish) {
                             pathToShow = findPath(start, destinations[0]);
+                            if (pathToShow.length > 0 || start === destinations[0]) {
+                                currentFloor = Math.floor(destinations[0] / 1000);
+                                updateFloor();
+                                updatePoints();
+                            }
                             break;
                         }
                     }
