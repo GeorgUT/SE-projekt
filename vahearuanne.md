@@ -12,7 +12,7 @@ Rühma kuuluvad Georg, Gregor ja Edvin.
 
 - Georg tegeles kasutusjuhendi koostamise ning selle ühendamisega ülejäänud kaardirakendusega.
 - Gregor tegeles neljanda korruse õppejõudude andmete lisamise ja õppejõudude loetelu täiendamisega.
-- Edvin tegeles: **[lisa siia Edvini tegelik ülesanne ja tehtud töö]**.
+- Edvin tegeles projekti ja veebilehe kirjeldamisega ning koostas projekti tutvustava lehekülje ehk landing page'i.
 
 Kõik liikmed tegid muudatusi enda GitHubi kontoga ning iga liige vastutab enda tehtud töö selgitamise eest.
 
