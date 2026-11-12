@@ -430,7 +430,7 @@ const paths = [
     {484: [481, 487, 491, 4029]},
     {485: [474, 482, 486, 488, 4039]},
     {486: [474, 478, 480, 482, 483, 485, 488]},
-    {487: [484, 489, 491, 403, 4030, 4035]},
+    {487: [484, 489, 491, 4030, 4035]},
     {488: [485, 486, 490, 4038]},
     {489: [487, 4031, 4032]},
     {490: [488, 491, 4037]},
@@ -1811,7 +1811,10 @@ function findPath(startPoint, destination) {
 
     // Rekursioon: kui lõpuks ei leia, väljastame errori
     if (!search(startPoint, destination, path, new Set([startPoint]))) console.log("Ruumi ei leitud!");
-    else document.getElementById(`mark${destination}`).classList.add("active");
+    else {
+        document.getElementById(`mark${destination}`).classList.add("active");
+        document.getElementById(`mark${startPoint}`).classList.add("active");
+    }
     // Kui tee leiti, väljastame selle sammude kujul
     return path;
 }
@@ -1873,48 +1876,44 @@ function calculate() {
 
             resetActive();
 
-
-            // Kui sisend on number
-            if (wish == Number(wish) && Number(wish) > 1000) {
-                if (start == Number(start) && Number(start) > 1000) {
-                    currentFloor = Number(wish) - (Number(wish) % 1000);
-                    currentFloor = currentFloor === 0 ? 1 : currentFloor / 1000;
-                    pathToShow = findPath(Number(start), Number(wish));
-                    updateFloor();
-                    updatePoints();
-                }
-                else if (start == "") {
-                    start = 100;
-                    currentFloor = Number(wish) - (Number(wish) % 1000);
-                    currentFloor = currentFloor === 0 ? 1 : currentFloor / 1000;
-                    pathToShow = findPath(Number(start), Number(wish));
-                    updateFloor();
-                    updatePoints();
-                }
-                currentFloor = Number(wish) - (Number(wish) % 1000);
-                currentFloor = currentFloor === 0 ? 1 : currentFloor / 1000;
-                pathToShow = findPath(start, Number(wish));
-                updateFloor();
-                updatePoints();
-            }
-
-
-            // Kui sisendiks on sõne, otsime vastavat õppejõudu ning kabinetti
-            // Primitiivne näide
-            else {
+            // Kui sisendid on sõned, tõlgime need ruuminumbriteks
+            if (wish != Number(wish)) {
                 wish = wish.trim().toLowerCase();
-                pathToShow = [];
                 for (const shortcut of shortCuts) {
                     for (const [key, destinations] of Object.entries(shortcut)) {
                         if (key == wish) {
-                            pathToShow = findPath(start, destinations[0]);
+                            wish = destinations[0];
                             break;
                         }
                     }
-                    if (pathToShow.length > 0) {
-                        break;
+                }
+            }
+
+            
+            if (start == "") start = 100;
+            else if (start != Number(start)) {
+                start = start.trim().toLowerCase();
+                for (const shortcut of shortCuts) {
+                    for (const [key, destinations] of Object.entries(shortcut)) {
+                        if (key == start) {
+                            start = destinations[0];
+                            break;
+                        }
                     }
                 }
+            }
+
+            // Vaatame numbrilise sisendi sobivust (sõne korral on see nüüd number)
+            // Igaks juhuks parsime, sest kui sisend oli numbriline, on see veel sõne
+            wish = Number(wish);
+            start = Number(start);
+            
+            if (wish > 1000 && (start > 1000 || start == 100)) {
+                currentFloor = Number(wish) - (Number(wish) % 1000);
+                currentFloor = currentFloor === 0 ? 1 : currentFloor / 1000;
+                pathToShow = findPath(start, wish);
+                updateFloor();
+                updatePoints();
             }
         drawPath();
     }, 1000);
@@ -1927,6 +1926,12 @@ numberInput1.addEventListener("input", () => {
 numberInput2.addEventListener("input", () => {
     calculate();
 });
+
+window.addEventListener("resize", () => {
+    drawPath();
+});
+
+
 
 // Joonistame teekonna
 function drawPath() {

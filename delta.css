@@ -27,17 +27,6 @@ header {
     justify-content: center;
 }
 
-input {
-    width: 30svw;
-    height: 7svh;
-    border-radius: 0.8rem;
-    font-size: 1.45rem;
-    font-weight: 700;
-    text-align: center;
-    border: none;
-    
-}
-
 span {
     font-size: 2rem;
     font-weight: bold;
@@ -71,10 +60,10 @@ main img {
 
 .floor-option {
     position: absolute;
-    height: 72px;
-    width: 216px;
+    height: 2.5rem;
+    width: 10rem;
     background-color: #4242423a;
-    top: 85%;
+    bottom: 5%;
     right: 5%;
     display: flex;
     flex-direction: row;
@@ -82,22 +71,43 @@ main img {
 }
 
 .floor {
-    width: 72px;
+    width: 2.5rem;
     height: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    font-size: 64px;
     color: rgb(239, 237, 237);
+}
+
+.insert {
+    position: absolute;
+    bottom: 12.5%;
+    right: 5%;
+    height: 5rem;
+    width: 10rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+input {
+    width: 100%;
+    height: 50%;
+    border-radius: 0.8rem;
+    font-size: 1.05rem;
+    font-weight: 700;
+    text-align: center;
+    border: none;
+    
 }
 
 .floor-button {
     height: 100%;
-    width: 72px;
+    width: 2.5rem;
     background: transparent;
     border: none;
-    font-size: 64px;
+    font-size: 2rem;
     font-weight: 700;
     color: rgba(245, 245, 245, 0.242);
 }
@@ -144,7 +154,7 @@ main img {
     background-color: #de1717;
     position: absolute;
     transform: translate(-50%, -50%);
-    opacity: 0;
+    opacity: 1;
     user-select: none;
 }
 /*
