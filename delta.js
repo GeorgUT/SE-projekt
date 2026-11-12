@@ -1871,32 +1871,47 @@ function calculate() {
         inputTimeout = setTimeout(() => {
 
             // Kontrollime sisendit
-            start = numberInput2.value;
+            start = numberInput2.value.trim();
+            start = start === "" ? 100 : Number(start);
             wish = numberInput1.value;
 
             resetActive();
 
-            // Kui sisendid on sõned, tõlgime need ruuminumbriteks
-            if (wish != Number(wish)) {
+
+            // Kui sisend on number
+            if (wish == Number(wish) && Number(wish) > 1000) {
+                if (start == Number(start) && Number(start) > 1000) {
+                    currentFloor = Number(wish) - (Number(wish) % 1000);
+                    currentFloor = currentFloor === 0 ? 1 : currentFloor / 1000;
+                    pathToShow = findPath(Number(start), Number(wish));
+                    updateFloor();
+                    updatePoints();
+                }
+                else if (start == "") {
+                    start = 100;
+                    currentFloor = Number(wish) - (Number(wish) % 1000);
+                    currentFloor = currentFloor === 0 ? 1 : currentFloor / 1000;
+                    pathToShow = findPath(Number(start), Number(wish));
+                    updateFloor();
+                    updatePoints();
+                }
+                currentFloor = Number(wish) - (Number(wish) % 1000);
+                currentFloor = currentFloor === 0 ? 1 : currentFloor / 1000;
+                pathToShow = findPath(start, Number(wish));
+                updateFloor();
+                updatePoints();
+            }
+
+
+            // Kui sisendiks on sõne, otsime vastavat õppejõudu ning kabinetti
+            // Primitiivne näide
+            else {
                 wish = wish.trim().toLowerCase();
+                pathToShow = [];
                 for (const shortcut of shortCuts) {
                     for (const [key, destinations] of Object.entries(shortcut)) {
                         if (key == wish) {
-                            wish = destinations[0];
-                            break;
-                        }
-                    }
-                }
-            }
-
-            
-            if (start == "") start = 100;
-            else if (start != Number(start)) {
-                start = start.trim().toLowerCase();
-                for (const shortcut of shortCuts) {
-                    for (const [key, destinations] of Object.entries(shortcut)) {
-                        if (key == start) {
-                            start = destinations[0];
+                            pathToShow = findPath(start, destinations[0]);
                             break;
                         }
                     }
