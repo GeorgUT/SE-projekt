@@ -42,6 +42,7 @@ header a {
 /* Klaviatuuriga liikudes on aktiivne element selgelt nähtav. */
 a:focus-visible,
 button:focus-visible,
+button:hover,
 input:focus-visible,
 select:focus-visible,
 textarea:focus-visible {
