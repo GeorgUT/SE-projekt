@@ -19,16 +19,17 @@ const paths = [
     {115: [112, 118, 1007]},
     {116: [113, 119, 1030]},
     {117: [114, 120, 1019]},
-    {118: [115, 121, 1008]},
+    {118: [115, 128, 1008]},
     {119: [116]},
     {120: [117, 122, 1018]},
-    {121: [118, 127]},
+    {121: [128, 127]},
     {122: [120, 124, 1017]},
     {123: [127, 125, 1013]},
     {124: [122, 125]},
     {125: [123, 124, 1015]},
     {126: [100, 1039, 1040]},
     {127: [121, 123, 501]},
+    {128: [118, 121]},
 
     {1004: [104]},
     {1005: [109]},
@@ -53,7 +54,7 @@ const paths = [
     {1040: [126]},
 
     // Teine korrus
-    {200: [201, 500]},
+    {200: [201, 502]},
     {201: [200, 202, 203, 204, 2048]},
     {202: [201, 205, 206, 207]},
     {203: [201, 204, 208]},
@@ -88,7 +89,7 @@ const paths = [
     {232: [229, 2017]},
     {233: [230, 234, 2011]},
     {234: [233, 2012]},
-    {235: [227, 230, 501]},
+    {235: [227, 230, 503]},
 
     {2002: [205]},
     {2003: [209]},
@@ -131,7 +132,7 @@ const paths = [
     {2051: [205]},
 
     // Kolmas korrus
-    {300: [301, 302, 500]},
+    {300: [301, 302, 504]},
     {301: [300, 303, 304, 305]},
     {302: [300, 306, 309, 313, 319, 322, 324]},
     {303: [301, 307, 3124]},
@@ -225,7 +226,7 @@ const paths = [
     {391: [389, 393, 395, 3040]},
     {392: [390, 393, 395, 3042]},
     {393: [391, 392, 395, 3041]},
-    {394: [375, 395, 501]},
+    {394: [375, 395, 505]},
     {395: [390, 391, 392, 393, 394]},
 
     {3002: [304]},
@@ -343,7 +344,7 @@ const paths = [
     {3124: [303]},
 
     // Neljas korrus
-    {400: [401, 402, 500]},
+    {400: [401, 402, 506]},
     {401: [400, 403, 404, 405]},
     {402: [400, 406, 407, 408, 409, 421]},
     {403: [401, 410, 4109, 4110]},
@@ -426,7 +427,7 @@ const paths = [
     {480: [474, 478, 482, 486, 4041]},
     {481: [479, 483, 484, 4026]},
     {482: [474, 480, 485, 486, 4040]},
-    {483: [481, 486, 501]},
+    {483: [481, 486, 507]},
     {484: [481, 487, 491, 4029]},
     {485: [474, 482, 486, 488, 4039]},
     {486: [474, 478, 480, 482, 483, 485, 488]},
@@ -542,8 +543,14 @@ const paths = [
     {4110: [403]},
 
     // Trepikojad
-    {500: [100, 200, 300, 400]},
-    {501: [127, 235, 394, 483]}
+    {500: [100, 502]},
+    {501: [127, 503]},
+    {502: [200, 500, 504]},
+    {503: [235, 501, 505]},
+    {504: [300, 502, 506]},
+    {505: [394, 503, 507]},
+    {506: [400, 504]},
+    {507: [483, 505]}
 ];
 
 // Iga korruse ruumid ja checkpointid (kaardil)
@@ -599,7 +606,10 @@ const firstFloorCheckpoints = [
     document.getElementById("mark124"),
     document.getElementById("mark125"),
     document.getElementById("mark126"),
-    document.getElementById("mark127")
+    document.getElementById("mark127"),
+    document.getElementById("mark128"),
+    document.getElementById("mark500"),
+    document.getElementById("mark501")
 ];
 
 const secondFloorRooms = [
@@ -679,7 +689,9 @@ const secondFloorCheckpoints = [
     document.getElementById("mark232"),
     document.getElementById("mark233"),
     document.getElementById("mark234"),
-    document.getElementById("mark235")
+    document.getElementById("mark235"),
+    document.getElementById("mark502"),
+    document.getElementById("mark503")
 ];
 
 const thirdFloorRooms = [
@@ -894,7 +906,9 @@ const thirdFloorCheckpoints = [
     document.getElementById("mark392"),
     document.getElementById("mark393"),
     document.getElementById("mark394"),
-    document.getElementById("mark395")
+    document.getElementById("mark395"),
+    document.getElementById("mark504"),
+    document.getElementById("mark505")
 ];
 
 const fourthFloorRooms = [
@@ -1094,7 +1108,9 @@ const fourthFloorCheckpoints = [
     document.getElementById("mark488"),
     document.getElementById("mark489"),
     document.getElementById("mark490"),
-    document.getElementById("mark491")
+    document.getElementById("mark491"),
+    document.getElementById("mark506"),
+    document.getElementById("mark507")
 ];
 
 // Kui kasutaja sisestab sõne, seatakse see vastavusse ruumivalikuga
@@ -1595,226 +1611,24 @@ const shortCuts = [
     {"yoel perreau": [4069]},
 ];
 
-const smartCuts = [
-    {3002: ["anett sommer", "liis tamm", "liivi luik", "merilin piirmann", "ülle holm"]},
-    {3003: ["kaisa raadik", "olumba chima anya", "orlenys lopez pintado", "vjatšeslav antipenko"]},
-    {3004: ["dietmar pfahl"]},
-    {3005: ["kulda taveter"]},
-    {3006: ["ali ihsan güllü", "fauzia khan", "kristiina rahkema", "maj-annika tammisto", "syazwanie zulkifli"]},
-    {3007: ["anastasija nikiforova", "hina anwar"]},
-    {3008: ["linda rosenkron", "maria khan", "muhammad bilal akhtar"]},
-    {3009: ["anu piirisild", "mohamad gharib"]},
-    {3010: ["mari seeba", "maria medina", "marinos gerogiadis", "tahira iqbal"]},
-    {3011: ["fredrik milani", "maksyk avramenko", "viktoriia abakumova"]},
-    {3012: ["henri lakk", "kristo väljako", "reimo palm", "stefan kuhn"]},
-    {3013: ["armando da silva vieira", "david chapela", "eduard ševtšenko"]},
-    {3014: ["helle hein", "mirjam paales"]},
-    {3015: ["heidi taveter", "kaspar papli", "ljubov jaanuska", "merilin säde", "mykhailo dorokhov", "priit paluoja"]},
-    {3016: []},
-    {3017: ["eerik muuli", "lidia feklistova", "phil labuschagne", "riin saadjärv", "svetlana golovko"]},
-    {3018: ["ahti põder", "jaan janno", "tauno palts"]},
-    {3019: ["marili rõõm", "piret luik"]},
-    {3020: ["danel ahman", "helena talimaa", "reelika suviste"]},
-    {3021: ["kristi salum", "marina lepp"]},
-    {3022: ["kalmer apinis", "vesal vojdani"]},
-    {3023: ["bruno de lima", "jevgenijs protopopovs", "karoliine holter", "mariana milicich", "simmo saan"]},
-    {3024: ["antti ainamo", "gamal elkoumy", "halil ibrahim aysel"]},
-    {3025: ["varmo vene"]},
-    {3026: ["chad nester", "matthew earnshaw"]},
-    {3027: ["dirk theis", "evgenii dolzkhov", "shahla novruzova"]},
-    {3028: ["heili aavola", "merilin kasesalu", "renato perotto machado", "zhigang yin"]},
-    {3029: ["maia boltovsky"]},
-    {3033: ["alo peets", "andres namm", "vinayak khavasi"]},
-    {3037: ["erkki laaneots", "kristjan krips", "mayowa olapade"]},
-    {3038: ["eero vainikko"]},
-    {3039: ["amnir hadachi"]},
-    {3040: ["pelle jakovits"]},
-    {3041: ["helen tera", "helena sokk"]},
-    {3042: ["mohammad anagreh", "tõnis hendrik hlebnikov", "shan wu"]},
-    {3043: ["artjom lind", "jose luis medina cartuche"]},
-    {3044: ["adeyinka akintola", "kevin post", "reo kuchida"]},
-    {3045: ["huber flores"]},
-    {3046: ["arvutigraafika"]},
-    {3048: ["hans hõrak", "liina juuse", "mark lütter", "mateus surrage reis"]},
-    {3049: ["ahto ahas", "ekaterina sedykh", "ilja pavlovs", "glib manaiev", "prasoon kumar vinodkumar"]},
-    {3050: ["alvo aabloo", "elsa triin raidla", "mariana kukk", "martti reinet"]},
-    {3051: ["elsa triin raidla", "krisliin rohtla", "mariana kukk", "martti reinet"]},
-    {3052: ["arun kumar singh"]},
-    {3053: ["ijeoma faustina ekeh", "lukaš daubner", "mubashar iqbal"]},
-    {3054: ["amith manoharan", "basant sharma", "edvin martin andrejev", "fatemeh rastgar", "simon idoko"]},
-    {3055: ["raimundas matulevicius"]},
-    {3056: ["krista liin", "lisa yankovskaya"]},
-    {3057: ["rasmus lellep", "somnath banerjee"]},
-    {3058: ["heiki-jaan kaalep", "kadri muischnek", "tarmo vaino"]},
-    {3059: ["eduard barbu", "heili orav", "siim orasmaa", "sven aller"]},
-    {3060: ["aleksei ivanov", "britt-kathleen mere", "liisa rätsep"]},
-    {3061: ["mark fišel"]},
-    {3062: ["maksym del", "navneet agarwal", "rauno jaaska"]},
-    {3063: ["aleksei dorkin", "deniss ruder", "emil kalbaliyev", "kairit sirts", "neha sharma"]},
-    {3064: ["mits"]},
-    {3065: ["faiz ali shah", "teija elina vainio", "yana halas"]},
-    {3066: ["dmytro zabolotnii", "matevž borjan zorec", "naveed muhammad"]},
-    {3067: ["abasi-amefon affia-jomants", "dimitrios symeonidiz", "kirill rodionov", "nesma mahmoud", "sander sats", "zofia dominika mizgalewicz", "taranika nurmik", "yan-martin tamm"]},
-    {3068: ["agnes luhtaru", "dmytro pashchenko", "giacomo magnifico", "hele-andra kuulmets", "martin vainikko", "taido purason"]},
-    {3070: ["daniel würsch", "erki külaots", "pritam pal", "urmas luhaäär"]},
-    {3071: ["karl kaspar haavel", "laura altin", "marek leibl", "mihkel lepson", "novin shahroudi"]},
-    {3072: ["roberto parisella", "toomas krips"]},
-    {3073: ["janno siim", "maiara francine bollauf"]},
-    {3074: ["vitaly skachek"]},
-    {3075: ["kübra seyhan", "sedat akleylek"]},
-    {3076: ["gerly tamm", "jaan aru", "madis vasser"]},
-    {3077: ["ardi tampuu", "jesus javier reyes torres", "marharyta domnich", "mary-ann kubre"]},
-    {3078: ["joonas järve", "mari-liis allikivi", "markus kängsepp"]},
-    {3079: ["karl kristjan kaup", "kristjan-julius laak", "mary-ann kubre", "taavi kivisik", "taavi luik", "tarun khajuria"]},
-    {3080: ["ali zeynalli", "illia tsiporenko", "joonas ariva", "syed qasim gilani"]},
-    {3081: []},
-    {3082: ["anna aljanaki", "kallol roy"]},
-    {3086: ["dzvenymyra-marta yarish", "krista killo", "kristiina kuningas", "peep kolberg", "ralf tambets"]},
-    {3088: ["helger lapimaa"]},
-    {3089: ["boris kudryashov", "hendrik hollmann", "irina bocharova"]},
-    {3090: []},
-    {3096: ["erik jaaniso", "marilin moor", "uku raudvere"]},
-    {3097: ["abbas cheddad", "miika juhani hannula"]},
-    {3099: []},
-    {3100: ["raul vicente"]},
-    {3101: ["jan timko", "kelem negasi amare", "mohamed maher zenhom abdelrahman", "vikash chander maneshwari"]},
-    {3102: ["meelis kull"]},
-    {3103: ["ali maharramov", "erick martin fiestas sorogastua", "leon de franca nascimento", "mehak mushtaq malik"]},
-    {3104: ["raivo kolde"]},
-    {3105: ["asad munir", "õie renate siimon"]},
-    {3106: ["ami sild", "elena sügis", "marek oja", "sirli tamm"]},
-    {3107: ["abdesselam ferdi", "hasan mohammed tanvir", "victor pinheiro"]},
-    {3108: ["kerli mooses", "sulev reisberg", "sven laur"]},
-    {3109: ["harry-anton talvik", "hendrik šuvalov", "maria malk", "markus haug"]},
-    {3110: ["dmytro fishman"]},
-    {3111: ["hedi peterson"]},
-    {3112: ["diana pilvar", "heleri inno", "ivan kuzmin", "liis lemsalu", "priit adler"]},
-    {3113: ["kaur alasoo"]},
-    {3114: ["heili kase", "kaia kask", "karis meister", "natali belinska"]},
-    {3115: []},
-    {3116: ["kersti taurus", "arvutiabi"]},
-    {3117: ["jüri kiho", "mare koit", "tiina lasn"]},
-    {3118: []},
-    {3119: ["jaak vilo"]},
-    {3120: ["anu toom", "henry narits", "lotte parksepp", "marianne liiv"]},
-    {3121: ["anneli vainumäe", "reili liiver", "saili petti"]},
-    {3122: ["piret orav"]},
-    {3123: ["aira reiska", "daisy alatare", "martin kaljula"]},
-    {3124: ["maria iqbal", "reet adamsoo"]},
-
-
-    
-    {4002: ["anneli kütt", "ave tiisler", "sirje saarmann"]},
-    {4003: ["anna port", "kadri sundja"]},
-    {4004: ["alina paas", "jelizaveta lazonen", "yana pryharina"]},
-    {4005: []},
-    {4006: ["eveli kriisa", "irina tamme"]},
-    {4007: ["martin jõgi", "tarmo puolokainen"]},
-    {4009: ["kadri orula", "ketlin suvi", "sigrid harjo", "siimeon elias pilli"]},
-    {4011: ["ly kütt", "merily loimet"]},
-    {4012: ["bradley james loewen", "jüri sepp", "oleksandr dorokhov", "ott pärna"]},
-    {4013: []},
-    {4014: ["diana eerma"]},
-    {4015: ["kadi timpmann"]},
-    {4016: ["kadri ukrainski"]},
-    {4017: ["lenno uusküla", "luca alfieri"]},
-    {4018: ["eneli kindsiko", "helen poltimäe"]},
-    {4019: ["liis roosaar", "tiiu paas"]},
-    {4020: ["andres võrk", "mustafa hakan eratalay"]},
-    {4021: ["jaan masso"]},
-    {4022: ["triinu pihus"]},
-    {4023: ["elina paemurru", "mariia chebotareva", "ulvi sloog", "ülle pärl"]},
-    {4024: ["peeter peda"]},
-    {4025: ["maire nurmet", "priit sander"]},
-    {4026: ["mark kantšukov"]},
-    {4027: []},
-    {4029: ["heli valtna", "katrin tamm", "liina käärst"]},
-    {4030: ["urmas varblane"]},
-    {4031: ["tiia vissak"]},
-    {4032: ["andres kuusik", "kerli ploom", "kristian pentus", "liudmyla dorokhova", "tanel mehine"]},
-    {4035: ["liina joller-vahter", "priit vahter"]},
-    {4036: ["eva liias"]},
-    {4037: ["oliver lukason"]},
-    {4038: ["raul omel"]},
-    {4039: ["eve parts"]},
-    {4040: ["anneli kaasa"]},
-    {4041: ["anneli lorenz", "märt summatavet", "tõnis mets"]},
-    {4042: ["mervi raudsaar"]},
-    {4043: ["tiia haldma", "ülle maidla"]},
-    {4044: ["annegrete molloka", "kristjan vassil", "taavi unt"]},
-    {4045: []},
-    {4046: ["aet ella-maria hiedel", "heiki keem", "piia vettik-leemet"]},
-    {4047: ["aykhan sadigov", "mihail minkov", "riia eratalay"]},
-    {4048: ["aivar pere", "iuliia trabskaia", "merike kaseorg"]},
-    {4049: ["anne reino", "krista jaakson", "sonja sackmann", "veiko valkiainen"]},
-    {4050: ["investeerimisklubi", "turundusklubi"]},
-    {4051: ["maaja vadi"]},
-    {4052: ["endel hango", "kaire valge", "raili lilo"]},
-    {4053: ["anne aidla", "kristjan pulk", "kulno türk", "kurmet kivipõld", "meelis milder"]},
-    {4054: ["hannes jukk", "liis mardi", "sirje pihlap"]},
-    {4055: ["anne-mai kaljuste", "kerli orav-puurand", "tiina kraav"]},
-    {4056: []},
-    {4057: ["heli tuopi", "janika kaljula", "karin täht", "kerdi mihhailova"]},
-    {4058: ["laura birgit luitva", "laura pikhof", "saskia kuusk"]},
-    {4059: ["annely mürk", "natalia saealle"]},
-    {4060: ["aljona kritsevskaja", "kati ain"]},
-    {4061: ["anette kikkas", "sandra sommer"]},
-    {4062: ["ella puman"]},
-    {4063: ["juhan aru"]},
-    {4064: []},
-    {4067: ["anastassia kolde", "getriin aaviste", "han bao", "merli koitmäe"]},
-    {4068: ["hanna sõnajalg", "mohammad jamsher ali", "oskar soop", "tuuli puusepp"]},
-    {4069: ["ago-eroik riet", "alexander stolin", "yoel perreau"]},
-    {4070: ["anne selart", "mara delesa-velina"]},
-    {4071: ["andre ostrak", "ene käärik", "imbi traat"]},
-    {4072: ["indrek zolk"]},
-    {4073: ["ene-margit tiit", "tõnu kollo"]},
-    {4074: ["evely kirsiaed", "jaanika kronberg", "peeter oja"]},
-    {4075: ["raul kangro"]},
-    {4076: ["kalev pärna", "mati kilp"]},
-    {4077: ["mare vähi"]},
-    {4078: ["mart abel", "mati abel", "retna maria perez tiscareno"]},
-    {4079: ["nasir sohail", "ülo reimaa"]},
-    {4080: ["julia polikarpus"]},
-    {4085: ["johann langemets", "rainis haller"]},
-    {4086: ["märt põldvere"]},
-    {4087: ["urve kangro"]},
-    {4088: ["jaagup kirme", "jaan kristjan kaasik", "marcus lõo"]},
-    {4089: ["jüri lember"]},
-    {4090: ["anti maria aader", "britt kalam", "erik-jürgen määrits", "heleen saarse-külaots", "margus lillemäe"]},
-    {4091: ["märt möls"]},
-    {4092: ["alvin lepik", "joonas sova"]},
-    {4093: ["kristi kuljus"]},
-    {4094: ["uno hämarik"]},
-    {4095: []},
-    {4096: ["meelis käärik"]},
-    {4097: ["kalle kaarli", "toivo leiger"]},
-    {4098: ["arvet pedas"]},
-    {4099: ["kaido lätt", "mikk vikerpuur", "toomas raus"]},
-    {4100: ["valdis laan"]},
-    {4101: ["krista fischer"]},
-    {4102: ["viktor abramov"]},
-    {4106: ["andres vaher", "carina somov", "madli vaher", "delta media house"]},
-    {4107: ["kertu lääts"]},
-    {4108: ["riina viilup"]},
-    {4109: []},
-    {4110: ["kersti kurri", "selje seeba"]}
-];
-
-// Defineerime alguspunkti (peauks) ning soovitud sihtpunkti
-var start = 100;
-var wish;
-
 // Funktsioon, mis leiab tee alguspunktist sihtpunkti
 function findPath(startPoint, destination) {
     const path = [];
 
-    // Rekursioon: kui lõpuks ei leia, väljastame errori
-    if (!search(startPoint, destination, path, new Set([startPoint]))) console.log("Ruumi ei leitud!");
+    // Rekursioon
+    // Kui ei leia, väljastame errori
+    if (!search(startPoint, destination, path, new Set([startPoint]))) {
+        console.log("Ruumi ei leitud!");
+    }
+
+    // Kui leiame, värvime algus ja lõpp-punkti
     else {
         document.getElementById(`mark${destination}`).classList.add("active");
+        document.getElementById(`mark${destination}`).style.backgroundColor = "rgb(0, 255, 127)";
         document.getElementById(`mark${startPoint}`).classList.add("active");
+        document.getElementById(`mark${startPoint}`).style.backgroundColor = "rgb(255, 127, 0)";
     }
+
     // Kui tee leiti, väljastame selle sammude kujul
     return path;
 }
@@ -1866,64 +1680,57 @@ const numberInput1 = document.getElementById("number-input1");
 var inputTimeout;
 var pathToShow = [];
 
+// Tõlgime sisendid ümber numbriteks ning joonistame teekonna, kui saame
+
+// 1s ootamine; et iga tähemärgi lisamisel ei hakkaks programm arvutusi tegema
 function calculate() {
     clearTimeout(inputTimeout);
         inputTimeout = setTimeout(() => {
+            
+            var start = numberInput2.value;
+            var wish = numberInput1.value;
 
             // Kontrollime sisendit
-            start = numberInput2.value.trim();
-            start = start === "" ? 100 : Number(start);
-            wish = numberInput1.value;
+            
+            // Default alguspunkt
+            if (start == "") start = 100;
 
-            resetActive();
-
-
-            // Kui sisend on number
-            if (wish == Number(wish) && Number(wish) > 1000) {
-                if (start == Number(start) && Number(start) > 1000) {
-                    currentFloor = Number(wish) - (Number(wish) % 1000);
-                    currentFloor = currentFloor === 0 ? 1 : currentFloor / 1000;
-                    pathToShow = findPath(Number(start), Number(wish));
-                    updateFloor();
-                    updatePoints();
-                }
-                else if (start == "") {
-                    start = 100;
-                    currentFloor = Number(wish) - (Number(wish) % 1000);
-                    currentFloor = currentFloor === 0 ? 1 : currentFloor / 1000;
-                    pathToShow = findPath(Number(start), Number(wish));
-                    updateFloor();
-                    updatePoints();
-                }
-                currentFloor = Number(wish) - (Number(wish) % 1000);
-                currentFloor = currentFloor === 0 ? 1 : currentFloor / 1000;
-                pathToShow = findPath(start, Number(wish));
-                updateFloor();
-                updatePoints();
-            }
-
-
-            // Kui sisendiks on sõne, otsime vastavat õppejõudu ning kabinetti
-            // Primitiivne näide
-            else {
-                wish = wish.trim().toLowerCase();
-                pathToShow = [];
+            // Kui alguspunkt on sõne
+            else if (start != Number(start)) {
+                start = start.trim().toLowerCase();
                 for (const shortcut of shortCuts) {
                     for (const [key, destinations] of Object.entries(shortcut)) {
-                        if (key == wish) {
-                            pathToShow = findPath(start, destinations[0]);
+                        if (key === start) {
+                            start = destinations[0];
                             break;
                         }
                     }
                 }
             }
 
-            // Vaatame numbrilise sisendi sobivust (sõne korral on see nüüd number)
-            // Igaks juhuks parsime, sest kui sisend oli numbriline, on see veel sõne
-            wish = Number(wish);
-            start = Number(start);
-            
-            if (wish > 1000 && (start > 1000 || start == 100)) {
+            // Kui alguspunkt on arv
+            else start = Number(start);
+
+            // Kui sihtpunkt on sõne
+            if (wish != Number(wish)) {
+                wish = wish.trim().toLowerCase();
+                for (const shortcut of shortCuts) {
+                    for (const [key, destinations] of Object.entries(shortcut)) {
+                        if (key === wish) {
+                            wish = destinations[0];
+                            break;
+                        }
+                    }
+                }
+            }
+
+            // Kui sihtpunkt on arv
+            else wish = Number(wish);
+
+            resetActive();
+
+            // Kui sisend on number
+            if (wish > 100 && (start > 100 || start == 100)) {
                 currentFloor = Number(wish) - (Number(wish) % 1000);
                 currentFloor = currentFloor === 0 ? 1 : currentFloor / 1000;
                 pathToShow = findPath(start, wish);
@@ -1935,16 +1742,11 @@ function calculate() {
 }
 
 // Uurime, kas sisendiväljal on olnud muutusi
-numberInput1.addEventListener("input", () => {
-    calculate();
-});
-numberInput2.addEventListener("input", () => {
-    calculate();
-});
+numberInput1.addEventListener("input", () => calculate());
+numberInput2.addEventListener("input", () => calculate());
 
-window.addEventListener("resize", () => {
-    drawPath();
-});
+// Kui akna suurus muutub, joonistame teekonna uuesti
+window.addEventListener("resize", () => drawPath());
 
 
 
@@ -1999,31 +1801,14 @@ const fourthFloorBg = document.getElementById("background4");
 
 var currentFloor = 1;
 
-floor1.onclick = () => {
-    currentFloor = 1;
-    updateFloor();
-    updatePoints();
-    drawPath();
-}
-floor2.onclick = () => {
-    currentFloor = 2;
-    updateFloor();
-    updatePoints();
-    drawPath();
-}
-floor3.onclick = () => {
-    currentFloor = 3;
-    updateFloor();
-    updatePoints();
-    drawPath();
-}
-floor4.onclick = () => {
-    currentFloor = 4;
-    updateFloor();
-    updatePoints();
-    drawPath();
-}
+floor1.onclick = () => floorUpdate(1);
+floor2.onclick = () => floorUpdate(2);
+floor3.onclick = () => floorUpdate(3);
+floor4.onclick = () => floorUpdate(4);
 
+
+
+// Kui vahetatakse korrust, näitame õiget kaarti ja korrusenumbrit
 function updateFloor() {
     firstFloorBg.style.display = currentFloor == 1 ? "flex" : "none";
     secondFloorBg.style.display = currentFloor == 2 ? "flex" : "none";
@@ -2036,13 +1821,15 @@ function updateFloor() {
     floor4.style.color = currentFloor == 4 ? "whitesmoke" : "#8d898d";
 }
 
+
+// Lähtestame varem joonistatud teekonna otspunktid
 function resetActive() {
     document.querySelectorAll(".active").forEach((element) => {
         element.classList.remove("active");
     });
 }
 
-// Ajutine lisand, et toggle'ida ruume ja checkpointe
+// Lülitame sisse vajalikud otspunktid, et näidataks teekonda ühe korruse raames
 function updatePoints() {
     firstFloorRooms.forEach((element) => {
         element.style.display = currentFloor === 1 ? "block" : "none";
@@ -2070,5 +1857,17 @@ function updatePoints() {
     });
 }
 
+
+// Korruse vahetus
+function floorUpdate(floor) {
+    currentFloor = floor;
+    updateFloor();
+    updatePoints();
+    drawPath();
+}
+
+
+
+// Initsialiseerimine
 updateFloor();
 updatePoints();

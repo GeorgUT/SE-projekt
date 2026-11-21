@@ -5,37 +5,37 @@ I korruse ruumide märgistamine +
 
 II korruse ruumide märgistamine +
 
-III korruse ruumide märgistamine -
+III korruse ruumide märgistamine +
 
-IV korruse ruumide märgistamine -
+IV korruse ruumide märgistamine +
  
 **Teekonnad**
 
-I korruse checkpointid -
+I korruse checkpointid +
 
-I korruse checkpointide omavaheline ühendamine ja ruumidega ühendamine -
+I korruse checkpointide omavaheline ühendamine ja ruumidega ühendamine +
 
-II korruse checkpointid -
+II korruse checkpointid +
 
-II korruse checkpointide omavaheline ühendamine ja ruumidega ühendamine -
+II korruse checkpointide omavaheline ühendamine ja ruumidega ühendamine +
 
-III korruse checkpointid -
+III korruse checkpointid +
 
-III korruse checkpointide omavaheline ühendamine ja ruumidega ühendamine -
+III korruse checkpointide omavaheline ühendamine ja ruumidega ühendamine +
 
-IV korruse checkpointid -
+IV korruse checkpointid +
 
-IV korruse checkpointide omavaheline ühendamine ja ruumidega ühendamine -
+IV korruse checkpointide omavaheline ühendamine ja ruumidega ühendamine +
 
-Korruste omavaheline ühendamine -
+Korruste omavaheline ühendamine +
 
 **Otsing**
 
-Programm tuvastab ruuminumbri ning moodustab vastava teekonna -
+Programm tuvastab ruuminumbri ning moodustab vastava teekonna +
 
-Programm tuvastab nime/sõna ning väljastab nimele/sõnale vastava(d) ruumi(d) -
+Programm tuvastab nime/sõna ning väljastab nimele/sõnale vastava(d) ruumi(d) +
 
-Vastavale ruumile vajutades kuvab see teekonna sinna ruumi -
+Vastavale ruumile vajutades kuvab see teekonna sinna ruumi +
 
 **Sõnaline juhindamine**
 
