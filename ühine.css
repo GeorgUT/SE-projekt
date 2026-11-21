@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Trykker&display=swap');
+
+/* Kõigi lehtede ühised värvid ja põhifont. */
+:root {
+    --taust: #051471ce;
+    --tekst: #303030;
+    --hele-tekst: white;
+    --pind: white;
+    --link: #051471;
+    --fookus: cyan;
+}
+
+html {
+    font-family: 'Trykker', Georgia, serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--taust);
+    color: var(--tekst);
+}
+
+/* Vormielemendid kasutavad ülejäänud lehega sama fonti. */
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+}
+
+a {
+    color: var(--link);
+    text-underline-offset: 4px;
+}
+
+header,
+header a {
+    color: var(--hele-tekst);
+}
+
+/* Klaviatuuriga liikudes on aktiivne element selgelt nähtav. */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid var(--fookus);
+    outline-offset: 4px;
+}
